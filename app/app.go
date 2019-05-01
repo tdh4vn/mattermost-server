@@ -305,6 +305,7 @@ func (a *App) Shutdown() {
 	mlog.Info("Server stopped")
 
 	a.DisableConfigWatch()
+	utils.DisableFileWatch()
 
 	a.HTTPService.Close()
 }
