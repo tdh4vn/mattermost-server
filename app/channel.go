@@ -780,7 +780,7 @@ func (a *App) addUserToChannel(user *model.User, channel *model.Channel, teamMem
 	}
 
 	if !utils.IsMemberAllowedToJoin(channel, user, a.Config()) {
-		return nil, model.NewAppError("AddUserToChannel", "api.channel.add_user.to.channel.failed.app_error", nil, "", http.StatusBadRequest)
+		return nil, model.NewAppError("AddUserToChannel", "api.channel.add_user.to.channel.failed.not_allowed.app_error", nil, "", http.StatusBadRequest)
 	}
 
 	newMember := &model.ChannelMember{
